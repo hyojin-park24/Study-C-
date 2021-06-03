@@ -34,7 +34,8 @@ public:
 		return m;
 	}
 
-	const MyTest& operator -(const MyTest& other)const
+	/*빼기 연산자*/
+	const MyTest operator -(const MyTest& other)const
 	{
 		MyTest m;
 		m.a = a - other.a;
@@ -42,25 +43,52 @@ public:
 
 		return m;
 	}
+
+	/*대입 연산자*/
+	/*일시적으로 객체를 전달해주어야 한다*/
+	const MyTest& operator =(const MyTest& other)
+	{
+		
+		a = other.a;
+		b = other.b;
+
+		return *this;			
+	}
+
+	/*전역 함수 사용을 위한 friend*/
+	friend const MyTest operator-(const MyTest& rhs1, const MyTest& rhs2);
 };
 
+/*전역 연산자 함수*/
+const MyTest operator-(const MyTest& rhs1, const MyTest& rhs2)
+{
+	MyTest m;
+	m.a = rhs1.a - rhs2.a;
+	m.b = rhs1.b - rhs2.b;
+
+	return m;
+}
 
 
 int main()
 {
-	MyTest sum1(75, 68);
+	/*MyTest sum1(75, 68);
 	MyTest sum2(86, 92);
 	MyTest sum3;
 	
-	sum3 = sum1 + sum2;
+	sum3 = sum1 + sum2;*/
 
 	MyTest dev1(91, 98);
 	MyTest dev2(45, 62);
 	MyTest dev;
 
-	dev = dev1 - dev2;
+	//dev = dev1 - dev2;
 
-	sum3.OutMyTest();
+	//dev = dev1.operator=(dev2);
+	dev = operator-(dev1, dev2);
+
+	//sum3.OutMyTest();
+	//dev.OutMyTest();
 	dev.OutMyTest();
 	return 0;
 }
