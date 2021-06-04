@@ -14,7 +14,7 @@ public:
 		strcpy(name, aname);
 		age = aage;
 	}
-	void intro()
+	void intro()							//얘가 오버라이딩
 	{
 		printf("이름 = %s, 나이 = %d\n", name, age);
 	}
