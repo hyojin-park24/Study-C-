@@ -23,4 +23,5 @@ Let's Dig-in~!
   class 속성 및 기능은 개발자가 설계하고,
   Main함수에서 함수호출 및 실행이 가능하도록 지원해주고 있다.
   필드 = 속성 : 멤버 변수, 기능 : 출력하는(보여주는)함수 = 멤버 함수 = 메서드   
- ```
+ ```   
+ [객체 코드](https://github.com/hyojin-park24/StudyC-/blob/main/StudyC%2B%2B/class.cpp)
