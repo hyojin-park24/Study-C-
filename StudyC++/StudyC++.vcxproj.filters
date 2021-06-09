@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="tryctor.cpp">
+    <ClCompile Include="MemPtrlnherit.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
